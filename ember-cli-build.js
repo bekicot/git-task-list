@@ -21,5 +21,6 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('node_modules/showdown/dist/showdown.js');
+  app.import('node_modules/bulma/css/bulma.css');
   return app.toTree();
 };

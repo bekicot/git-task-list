@@ -7,3 +7,16 @@
 .search-results {
   overflow-y: scroll;
 }
+
+.modal {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 1s, opacity 1s;
+}
+
+.is-active {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 1s;
+}

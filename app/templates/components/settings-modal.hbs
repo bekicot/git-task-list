@@ -1,9 +1,23 @@
-<div class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <p class="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="">
-    </p>
+<div class="modal-background" onclick={{action "hideModal"}}></div>
+<div class="modal-content">
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">User Settings</p>
+      <button class="delete" aria-label="close" onclick={{action "hideModal"}}></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="field">
+        <label class="label">GitHub Token</label>
+        <div class="control">
+          {{input class="input" value=token_github_com}}
+        </div>
+        <p class="help">get GitHub user token from <<a href="https://github.com/settings/tokens" title="https://github.com/settings/tokens">https://github.com/settings/tokens</a></p>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success" onclick={{action "saveSettings"}}>Save</button>
+      <button class="button" onclick={{action "hideModal"}}>Close</button>
+    </footer>
   </div>
-  <button class="modal-close is-large" aria-label="close"></button>
 </div>
+<button class="modal-close is-large" aria-label="close" onclick={{action "hideModal"}}></button>
