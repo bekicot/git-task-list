@@ -1,0 +1,32 @@
+<div class="columns">
+  <section class="container column is-one-quarter">
+    <aside class="menu">
+      {{#if currentOrg }}
+      <p class="menu-label">
+        Current Organization
+      </p>
+      <ul class="menu-list">
+        <li><a>{{currentOrg.name}}</a></li>
+      </ul>
+      {{/if}}
+      <p class="menu-label">
+        Organizations
+      </p>
+      <ul class="menu-list">
+        {{#each-in organizations.list as |slug org| }}
+          <li>
+            {{#link-to "tasks" (query-params org=slug)}}
+              {{org.name}}
+            {{/link-to}}
+          </li>
+        {{/each-in}}
+      </ul>
+    </aside>
+  </section>
+  <div class="column is-three-quarters">
+    {{#each tasks as |task|}}
+      {{task-item task=task}}
+    <hr>
+    {{/each}}
+  </div>
+</div>
