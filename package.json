@@ -63,5 +63,10 @@
     "linkifyjs": "^2.1.6",
     "minimatch": "^3.0.3",
     "moment": "^2.22.1"
+  },
+  "ember-addon": {
+    "paths": [
+      "lib/gsoc-org"
+    ]
   }
 }
