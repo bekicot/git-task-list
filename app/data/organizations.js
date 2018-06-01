@@ -1,3 +1,4 @@
+// This file is going to be replaced in production builds.
 export default {
   coala: {
     name: 'coala association e.V.',
