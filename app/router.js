@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function mainRoute() {
   return this.route('tasks', function tasksRoute() {
     this.route('github');
+    this.route('gitlab');
   });
 });
 

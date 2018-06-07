@@ -8,6 +8,7 @@ export default Component.extend({
 
   // Properties
   token_github_com: oneWay('userSettings.tokens.github_com'),
+  token_gitlab_com: oneWay('userSettings.tokens.gitlab_com'),
 
   init(...args) {
     this._super(...args);
@@ -19,6 +20,7 @@ export default Component.extend({
     },
     saveSettings() {
       this.userSettings.setToken('github_com', this.get('token_github_com'));
+      this.userSettings.setToken('gitlab_com', this.get('token_gitlab_com'));
       this.set('isActive', false);
     },
   },

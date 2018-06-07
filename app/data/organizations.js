@@ -11,7 +11,11 @@ export default {
       },
       {
         type: 'gitlab',
-        identifier: 'coala',
+        identifier: 'coala/mobans',
+      },
+      {
+        type: 'gitlab',
+        identifier: 'coala/coala-utils',
       },
     ],
   },

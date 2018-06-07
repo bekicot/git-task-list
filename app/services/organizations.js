@@ -1,11 +1,11 @@
-import Object, { computed } from '@ember/object';
+import EmberObject, { computed } from '@ember/object';
 import Service from '@ember/service';
 import organizations from '../data/organizations';
 
 export default Service.extend({
   init(...args) {
     this._super(...args);
-    this.organizations = Object.create(organizations);
+    this.organizations = EmberObject.create(organizations);
   },
 
   list: computed('organizations', function getOrganizationList() {
@@ -15,4 +15,18 @@ export default Service.extend({
   fetch(slug) {
     return this.organizations.get(slug);
   },
+
+  fetchGitlabProjects(slug) {
+    const { trackers } = this.fetch(slug);
+    if (!trackers) {
+      return [];
+    }
+    return trackers.reduce((previous, tracker) => {
+      if (tracker.type === 'gitlab') {
+        return [...previous, tracker.identifier];
+      }
+      return previous;
+    }, []);
+  },
+
 });

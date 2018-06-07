@@ -1,0 +1,16 @@
+<nav class="panel">
+  <p class="panel-tabs is-size-4">
+    {{#link-to 'tasks.github'}}
+      GitHub
+    {{/link-to}}
+    <a>|</a>
+    <a class="is-active" disabled>GitLab</a>
+  </p>
+</nav>
+{{#each model as |task|}}
+  {{task-item task=task}}
+<hr>
+{{/each}}
+{{#unless model}}
+  <p>This Org doesn't have any gitlab repository.</p>
+{{/unless}}
