@@ -14,19 +14,16 @@
       </p>
       <ul class="menu-list">
         {{#each-in organizations.list as |slug org| }}
-          <li>
-            {{#link-to "tasks" (query-params org=slug)}}
-              {{org.name}}
-            {{/link-to}}
-          </li>
+        <li>
+          {{#link-to (query-params org=slug)}}
+          {{org.name}}
+          {{/link-to}}
+        </li>
         {{/each-in}}
       </ul>
     </aside>
   </section>
   <div class="column is-three-quarters">
-    {{#each tasks as |task|}}
-      {{task-item task=task}}
-    <hr>
-    {{/each}}
+    {{outlet}}
   </div>
 </div>

@@ -7,7 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('tasks');
+  this.route('tasks', function() {
+    this.route('gitlab');
+    this.route('github');
+  });
 });
 
 export default Router;

@@ -1,0 +1,13 @@
+<nav class="panel">
+  <p class="panel-tabs is-size-4">
+    <a class="is-active" disabled>GitHub</a>
+    <a>|</a>
+    {{#link-to 'tasks.gitlab'}}
+      GitLab
+    {{/link-to}}
+  </p>
+</nav>
+{{#each tasks as |task|}}
+  {{task-item task=task}}
+<hr>
+{{/each}}
